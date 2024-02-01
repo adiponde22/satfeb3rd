@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ask Out Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #92703B;
+    }
+
+    .container {
+        text-align: center;
+        max-width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    img {
+        width: 200px;
+        height: auto;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        border-radius: 10px;
+        animation: rotateCat 5s linear infinite; /* Adjust animation duration as needed */
+    }
+
+    @keyframes rotateCat {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 0 10px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button.yes {
+        background-color: #4CAF50;
+        color: #fff;
+    }
+
+    button.no {
+        background-color: #f44336;
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Wanna go out with me on saturday??</h1>
+    <p>🟤 We can get el jefe's 🌮</p>
+    <p>🟤 Then walk around the city for a bit 🚶🏽‍♂️</p>
+    <p>🟤 also potentially go to assembly row and watch a movie too 🍿</p>
+    <button class="yes" onclick="redirectToNextPage()">Yes</button>
+    <button class="no" onmouseover="moveNoButton()">No</button>
+    <img src="cat1.png" alt="Cat Image">
+</div>
+
+<script>
+    function redirectToNextPage() {
+        alert("Great!");
+        window.location.href = "next_page.html";
+    }
+
+    function moveNoButton() {
+        var button = document.querySelector('.no');
+        // Randomize position within the specified area of 700x700 pixels
+        var newX = Math.random() * 400;
+        var newY = Math.random() * 400;
+        button.style.position = 'absolute';
+        button.style.left = newX + 'px';
+        button.style.top = newY + 'px';
+    }
+</script>
+</body>
+</html>
